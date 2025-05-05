@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXS BioMedica - Transforming Lives Through Science</title>
+  <meta name="description" content="NEXS BioMedica is pioneering the future of oncology treatment through groundbreaking research and innovative therapies.">
+  <link rel="icon" href="images/NEXS BIOMEDICA LOGO-Transparent.png" type="image/png">
+  <style>
+    :root {
+      --accent: 30 100% 50%;
+      --accent-foreground: 0 0% 100%;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9fafb;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    header {
+      background-color: white;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      padding: 1rem 5%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff7e00;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .logo img {
+      height: 40px;
+    }
+    
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: #334155;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    nav a:hover {
+      color: #ff7e00;
+    }
+    
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      margin-top: 0;
+      overflow: hidden;
+    }
+    
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 2rem;
+    }
+    
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+    
+    .button {
+      display: inline-block;
+      background-color: #ff7e00;
+      color: white;
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.25rem;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+    
+    .button:hover {
+      background-color: #ea580c;
+    }
+    
+    .section {
+      padding: 6rem 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 1rem;
+    }
+    
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .card {
+      background-color: white;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    
+    .card-content {
+      padding: 1.5rem;
+    }
+    
+    .card-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #ff7e00;
+    }
+    
+    .parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    
+    .parallax-content {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      border-radius: 0.5rem;
+      max-width: 800px;
+    }
+    
+    .team-section {
+      padding: 6rem 0;
+      background-color: #f1f5f9;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .team-member {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .team-member:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .team-photo {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    
+    .team-info {
+      padding: 1.5rem;
+    }
+    
+    .team-name {
+      font-size: 1.25rem;
+      margin-bottom: 0.25rem;
+    }
+    
+    .team-title {
+      color: #ff7e00;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    
+    footer {
+      background-color: #1e293b;
+      color: white;
+      padding: 4rem 5% 2rem;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto 2rem;
+    }
+    
+    .footer-title {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: #ff7e00;
+    }
+    
+    .footer-contact a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    .footer-contact a:hover {
+      color: white;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #334155;
+      color: #94a3b8;
+    }
+    
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      h2 {
+        font-size: 1.25rem;
+      }
+      
+      .section {
+        padding: 4rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/" class="logo">
+      <img src="images/NEXS BIOMEDICA LOGO-Transparent.png" alt="NEXS BioMedica Logo">
+      <span>NEXS BioMedica</span>
+    </a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+      <a href="/investors.html">Investors</a>
+    </nav>
+  </header>
+  
+  <section class="hero">
+    <video class="hero-video" autoplay loop muted playsinline poster="images/NEXSBioMedica_Lobby.jpg">
+      <source src="videos/NEXS BioMedica commercial (1).mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Transforming Science into Life-Changing Therapies</h1>
+      <h2>Leading the fight against cancer through innovative biotechnology</h2>
+      <a href="#about" class="button">Learn More</a>
+    </div>
+  </section>
+  
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>About NEXS BioMedica</h2>
+        <p>We are pioneering the future of oncology treatment through groundbreaking research and innovative therapies.</p>
+      </div>
+      
+      <div class="cards">
+        <div class="card">
+          <img src="images/NEXSBioMedica_Lobby.jpg" alt="Our Mission" class="card-image">
+          <div class="card-content">
+            <h3 class="card-title">Our Mission</h3>
+            <p>At NEXS BioMedica, our mission is to harness the power of cutting-edge biotechnology to develop life-changing therapies for cancer patients worldwide.</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <img src="images/research.jpeg" alt="Our Approach" class="card-image">
+          <div class="card-content">
+            <h3 class="card-title">Our Approach</h3>
+            <p>We integrate advanced gene editing technologies, precision medicine, and immunotherapy to create targeted treatments with unprecedented efficacy.</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <img src="images/Gene.jpeg" alt="Our Impact" class="card-image">
+          <div class="card-content">
+            <h3 class="card-title">Our Impact</h3>
+            <p>Our innovative therapies have the potential to transform the landscape of cancer treatment and bring hope to patients worldwide.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <div class="parallax" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/OncologyResearch.jpg');">
+    <div class="parallax-content">
+      <h2>Transforming Oncology Treatments</h2>
+      <p>At NEXS BioMedica, we are at the forefront of the fight against cancer. Our team of world-class scientists is developing innovative approaches to target cancer cells with unprecedented precision, minimizing side effects and maximizing efficacy.</p>
+    </div>
+  </div>
+  
+  <section id="research" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Research</h2>
+        <p>Exploring breakthrough approaches to cancer treatment through innovative biotechnology.</p>
+      </div>
+      
+      <div class="cards">
+        <div class="card">
+          <img src="images/Gene.jpeg" alt="Precision Medicine" class="card-image">
+          <div class="card-content">
+            <h3 class="card-title">Precision Gene Therapy</h3>
+            <p>Our proprietary gene editing platform enables precise modifications to cancer-related genes, offering targeted treatments for previously untreatable cancers.</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <img src="images/NEXS_Research.jpeg" alt="Immunotherapy" class="card-image">
+          <div class="card-content">
+            <h3 class="card-title">Advanced Immunotherapy</h3>
+            <p>We're developing novel immunotherapy approaches that enhance the body's natural ability to recognize and eliminate cancer cells.</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <img src="images/Innovation.jpeg" alt="Drug Delivery" class="card-image">
+          <div class="card-content">
+            <h3 class="card-title">Targeted Drug Delivery</h3>
+            <p>Our innovative drug delivery systems ensure therapeutic agents reach cancer cells with unprecedented precision, maximizing efficacy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <div class="parallax" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/NEXSIMG2.jpg');">
+    <div class="parallax-content">
+      <h2>Join Us in Our Mission</h2>
+      <p>Together, we can transform the future of cancer treatment and bring hope to millions of patients around the world.</p>
+      <a href="/investors.html" class="button" style="margin-top: 1rem;">Partner With Us</a>
+    </div>
+  </div>
+  
+  <section id="team" class="team-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Leadership</h2>
+        <p>Meet the experts driving our mission to transform cancer treatment.</p>
+      </div>
+      
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="images/MarcNelsonMD.jpeg" alt="Dr. Marc Nelson" class="team-photo">
+          <div class="team-info">
+            <h3 class="team-name">Dr. Marc Nelson</h3>
+            <p class="team-title">Founder and CEO</p>
+            <p>Dr. Nelson is a visionary physician-entrepreneur with over 20 years of experience in oncology research and pharmaceutical development.</p>
+          </div>
+        </div>
+        
+        <div class="team-member">
+          <img src="images/Innovation.jpeg" alt="Dr. Sarah Chen" class="team-photo">
+          <div class="team-info">
+            <h3 class="team-name">Dr. Sarah Chen</h3>
+            <p class="team-title">Chief Scientific Officer</p>
+            <p>Dr. Chen leads our research initiatives with her expertise in molecular biology and gene editing technologies.</p>
+          </div>
+        </div>
+        
+        <div class="team-member">
+          <img src="images/04.jpeg" alt="Dr. Michael Thompson" class="team-photo">
+          <div class="team-info">
+            <h3 class="team-name">Dr. Michael Thompson</h3>
+            <p class="team-title">Chief Medical Officer</p>
+            <p>Dr. Thompson oversees the clinical development of our therapies, bringing decades of experience in oncology clinical trials.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="contact" class="section" style="background-color: #ff7e00; color: white; text-align: center;">
+    <div class="container">
+      <h2 style="color: white; font-size: 2.5rem; margin-bottom: 1rem;">Contact Us</h2>
+      <p style="margin-bottom: 2rem; font-size: 1.1rem;">Have questions about our research or potential partnerships? We'd love to hear from you.</p>
+      
+      <div style="max-width: 700px; margin: 0 auto; background-color: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 0.5rem;">
+        <p style="margin-bottom: 0.5rem; font-size: 1.1rem;">
+          <strong>Address:</strong> <a href="https://maps.google.com/?q=6030+Marshalee+Drive,+Elkridge,+MD+21075" target="_blank" style="color: white; text-decoration: underline;">6030 Marshalee Drive, Elkridge, MD 21075</a>
+        </p>
+        <p style="margin-bottom: 0.5rem; font-size: 1.1rem;">
+          <strong>Phone:</strong> <a href="tel:+15715802911" style="color: white; text-decoration: underline;">+1 (571) 580-2911</a>
+        </p>
+        <p style="margin-bottom: 2rem; font-size: 1.1rem;">
+          <strong>Email:</strong> <a href="mailto:info@nexsbiomedica.com" style="color: white; text-decoration: underline;">info@nexsbiomedica.com</a>
+        </p>
+        <a href="mailto:info@nexsbiomedica.com" class="button" style="background-color: white; color: #ff7e00;">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="footer-content">
+      <div>
+        <div class="footer-title">NEXS BioMedica</div>
+        <p>Transforming science into life-changing therapies for cancer patients worldwide.</p>
+        <p style="margin-top: 1rem;">
+          <a href="https://maps.google.com/?q=6030+Marshalee+Drive,+Elkridge,+MD+21075" target="_blank" style="color: #94a3b8; text-decoration: none;">
+            6030 Marshalee Drive<br>Elkridge, MD 21075
+          </a>
+        </p>
+      </div>
+      
+      <div class="footer-contact">
+        <div class="footer-title">Contact Us</div>
+        <p>
+          <span>Phone: </span>
+          <a href="tel:+15715802911">+1 (571) 580-2911</a>
+        </p>
+        <p>
+          <span>Email: </span>
+          <a href="mailto:info@nexsbiomedica.com">info@nexsbiomedica.com</a>
+        </p>
+      </div>
+      
+      <div>
+        <div class="footer-title">Quick Links</div>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin-bottom: 0.5rem;"><a href="/" style="color: #94a3b8; text-decoration: none;">Home</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="/investors.html" style="color: #94a3b8; text-decoration: none;">Investors</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #94a3b8; text-decoration: none;">Terms of Service</a></li>
+          <li><a href="#" style="color: #94a3b8; text-decoration: none;">Code of Ethics</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 NEXS BioMedica. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
